@@ -12,7 +12,7 @@ public class Bibliotheque implements Serializable
 	private static final long serialVersionUID = 262L;
 
 	// -----------------------------------------------
-		//Attributs
+        //Attributs
 	// -----------------------------------------------
 	
 		private HashMap<Integer, Lecteur> _dicoLecteur;
@@ -136,10 +136,8 @@ public class Bibliotheque implements Serializable
 
 		if (O != null)
 		{
-			int numProposé = O.PropNumExemplaire();
-                        do {
-                            numExemplaire = EntreesSorties.lireEntier("Entrez un numéro d'exemplaire, pour information, le premier numéro d'exemplaire disponible est "+numProposé+" : ");
-                        }while (O.getExemplaires().containsKey(numExemplaire));
+			numExemplaire = O.PropNumExemplaire();
+                        EntreesSorties.afficherMessage("L'exemplaire aura pour numéro : "+numExemplaire);
                         GregorianCalendar dateReception;
                         do{
                             dateReception = EntreesSorties.lireDate("Entrez la date de reception, celle-ci doit être supérieure à la date de parution ("+O.getDateParution().get(GregorianCalendar.DAY_OF_MONTH)+"/"+(O.getDateParution().get(GregorianCalendar.MONTH)+1)+"/"+O.getDateParution().get(GregorianCalendar.YEAR)+") :");
