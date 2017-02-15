@@ -51,9 +51,9 @@ public class Bibliotheque implements Serializable
 		 * afin de garantir la cohérence des données.
 		 */
 	public void nouveauLecteur()
-	{       int numProposé = PropNumLecteur();
-        
-                Integer numLecteur = EntreesSorties.lireEntier("Entrez le numero de lecteur, pour information, le premier numéro de lecteur disponible est le "+numProposé+" :");
+	{   int numLecteur = PropNumLecteur();
+
+		EntreesSorties.afficherMessage("Le lecteur aura pour numéro : "+numLecteur);
 		
 		Lecteur L = unLecteur(numLecteur);
 		
