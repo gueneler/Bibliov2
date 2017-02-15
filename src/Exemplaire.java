@@ -1,0 +1,75 @@
+
+import java.util.GregorianCalendar;
+
+
+public class Exemplaire{
+    
+    
+    //attributs
+    
+    private int numExemplaire;
+    private GregorianCalendar dateReception;
+    private boolean empruntable;
+    private String numISBN;
+    
+    //constructeur
+    
+    public Exemplaire(String numISBN, int numExemplaire, GregorianCalendar dateReception, Boolean empruntable){
+        this.setNumISBN(numISBN);
+        this.setNumExemplaire(numExemplaire);
+        this.setDateReception(dateReception);
+        this.setEmpruntable(empruntable);        
+    }
+    
+    //methodes
+
+    /**
+     * @return the numExemplaire
+     */
+    public int getNumExemplaire() {
+        return numExemplaire;
+    }
+
+    /**
+     * @param numExemplaire the numExemplaire to set
+     */
+    private void setNumExemplaire(int numExemplaire) {
+        this.numExemplaire = numExemplaire;
+    }
+
+    /**
+     * @return the dateReception
+     */
+    public GregorianCalendar getDateReception() {
+        return dateReception;
+    }
+
+    /**
+     * @param dateReception the dateReception to set
+     */
+    private void setDateReception(GregorianCalendar dateReception) {
+        this.dateReception = dateReception;
+    }
+
+    /**
+     * @return the empruntable
+     */
+    public boolean isEmpruntable() {
+        return empruntable;
+    }
+
+    /**
+     * @param empruntable the empruntable to set
+     */
+    private void setEmpruntable(boolean empruntable) {
+        this.empruntable = empruntable;
+    }
+
+    /**
+     * @param numISBN the numISBN to set
+     */
+    private void setNumISBN(String numISBN) {
+        this.numISBN = numISBN;
+    }
+        
+}
