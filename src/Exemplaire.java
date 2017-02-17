@@ -74,5 +74,13 @@ public class Exemplaire implements Serializable {
     private void setNumISBN(String numISBN) {
         this.numISBN = numISBN;
     }
+    
+    public void setEtatEmprunté(){
+        this.emprunté = true;
+    }
+    
+    public void setEtatDispo(){
+        this.emprunté = false;
+    }
         
 }
