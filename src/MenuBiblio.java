@@ -118,6 +118,8 @@ public void menuExemplaire() {
 		EntreesSorties.afficherMessage("| Saisissez un numero correspondant :                    |");
 		EntreesSorties.afficherMessage("| Nouvel Exemplaire : 1                                  |");
 		EntreesSorties.afficherMessage("| Consulter Exemplaire : 2                               |");
+                EntreesSorties.afficherMessage("| Emprunter Exemplaire : 3                               |");
+                EntreesSorties.afficherMessage("| Rendre Exemplaire : 4                                  |");
 		EntreesSorties.afficherMessage("| Retour Menu Principal : 0                              |");
 		EntreesSorties.afficherMessage(" ========================================================");
 		menuEx = EntreesSorties.lireEntier();
@@ -129,6 +131,16 @@ public void menuExemplaire() {
 				}
 				case 2 : {
 					_bibliotheque.consulterExemplaire();
+					break;
+				}
+                                
+                                case 3 : {
+					_bibliotheque.emprunterExemplaire();
+					break;
+				}
+                                
+                                case 4 : {
+					_bibliotheque.rendreExemplaire();
 					break;
 				}
 				default : {
