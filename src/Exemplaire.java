@@ -82,5 +82,7 @@ public class Exemplaire implements Serializable {
     public void setEtatDispo(){
         this.emprunté = false;
     }
+    
+    
         
 }
