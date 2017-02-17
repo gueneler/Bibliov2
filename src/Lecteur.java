@@ -140,6 +140,11 @@ public class Lecteur implements Serializable
                         }
                     }
                 }
+                
+                public int verifNombreEmprunts(){
+                    return empruntsEnCours.size();
+                }
+       
 		
 	
 	
