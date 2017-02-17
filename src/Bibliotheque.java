@@ -317,8 +317,9 @@ public class Bibliotheque implements Serializable
         }
 
         private int afficherRetardataires() {
-            int compteur;
+            int compteur = 0;
             GregorianCalendar dateActuelle;
+            dateActuelle = new GregorianCalendar();
             dateActuelle.setTime(new Date());
             for (Emprunt e : _historiqueEmprunts) {
                 GregorianCalendar dateRetourPrevueProvisoire = e.getDateRetourPrevue();
