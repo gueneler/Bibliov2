@@ -215,6 +215,10 @@ public class Bibliotheque implements Serializable
                 EntreesSorties.afficherMessage("Ce numéro d'ISBN ne correspond à aucun ouvrage. Il faut d'abord l'enregistrer.");
             }
         }
+
+        public void relancerLecteur() {
+
+        }
 	
 // -----------------------------------------------
 	// Private
