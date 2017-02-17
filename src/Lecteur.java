@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -118,7 +119,18 @@ public class Lecteur implements Serializable
                 }
                 
                 public String getPublic() {
-                    
+                    int age = calculAge();
+                    String blic;
+                    if(age < 10){
+                        blic = "enfant";
+                    }
+                    else if(age >= 10 && age <= 16){
+                        blic = "adolescent";
+                    }
+                    else {
+                        blic = "adulte";
+                    }
+                    return blic;
                 }
                     
                 public void delierExemplaire(Exemplaire ex) {
