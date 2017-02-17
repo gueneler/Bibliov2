@@ -245,6 +245,9 @@ public class Bibliotheque implements Serializable
             int numLecteur = EntreesSorties.lireEntier("Entrez le numéro de lecteur : ");
             Ouvrage o = getOuvrage(numISBN);
             Lecteur l = unLecteur(numLecteur);
+            if (l == null){
+                EntreesSorties.afficherMessage("Le lecteur n'est pas répertorié");
+            }
             if (o != null){
                 Exemplaire e = o.getExemplaire(numExemplaire);
                 if (e != null){
