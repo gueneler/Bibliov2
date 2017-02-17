@@ -82,5 +82,29 @@ public class Exemplaire implements Serializable {
     public void setEtatDispo(){
         this.emprunté = false;
     }
+    
+    public void ajouterEmprunt(Ouvrage o, Lecteur l, Exemplaire e){
+        Emprunt emp;
+        emp = new Emprunt(o,l,e);
+        this.setEtatEmprunté();
+        ajouterEmpruntDico(emp);
+    }
+    
+    public String verifEtat(){
+        String etat;
+        
+        if(this.emprunté == true){
+            etat = "exemplaire emprunté";
+        }
+        else if(this.empruntable == false){
+            etat = "exemplaire non empruntable";
+        }
+        else {
+            etat = "disponible";
+        }
+        
+        return etat;
+    }
+    
         
 }
