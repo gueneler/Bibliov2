@@ -372,5 +372,15 @@ public class Bibliotheque implements Serializable
             _historiqueEmprunts.add(emp);
         }
         
+        private Emprunt getEmprunt(String numISBN, int numExemplaire){
+            Emprunt emp = null;
+            for (Emprunt e : _historiqueEmprunts){
+                if (e.getOuvrage().getNumISBN() == numISBN && e.getExemplaire().getNumExemplaire() == numExemplaire && e.getDateRetour() == null){
+                    emp = e;
+                }
+            }
+            return emp;
+        }
+        
         
 }
