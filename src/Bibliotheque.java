@@ -238,6 +238,40 @@ public class Bibliotheque implements Serializable
             int compteur = afficherRetardataires();
             System.out.println("Fin d'affichage des "+compteur+" emprunts en retard.");
         }
+        
+        public void rendreExemplaire(){
+            String numISBN = EntreesSorties.lireChaine("Entrez un numéro ISBN : ");
+            int numExemplaire = EntreesSorties.lireEntier("Entrez le numéro d'exemplaire rendu : ");
+            Ouvrage o = getOuvrage(numISBN);
+            if (o != null){
+                Exemplaire e = o.getExemplaire(numExemplaire);
+                if (e != null){
+                    Emprunt emp = getEmprunt(numISBN, numExemplaire);
+                    if (emp != null){
+                        Lecteur l = emp.getLecteur();
+                        String etat = l.verifEtat();
+                        if (etat == "exemplaire emprunté"){
+                            l.delierExemplaire(e);
+                            emp.ajoutDateRetour();
+                            e.setEtatDispo();
+                            
+                        }
+                        else{
+                            EntreesSorties.afficherMessage("Aucun emprunt n'est lié à cet exemplaire.");
+                        }
+                    }
+                    else {
+                        EntreesSorties.afficherMessage("Aucun emprunt n'est lié à cet exemplaire.");
+                    }
+                }
+                else {
+                    EntreesSorties.afficherMessage("Ce unméro ne correspond à aucun exemplaire de cet ouvrage.");
+                }
+            }
+            else {
+                EntreesSorties.afficherMessage("Ce numéro d'ISBN n'est pas enregistré");
+            }
+        }
 	
 // -----------------------------------------------
 	// Private
