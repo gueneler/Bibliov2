@@ -117,9 +117,9 @@ public class Lecteur implements Serializable
                     }
                 }
                 
-                public void delierExemplaire(int numExemplaire) {
+                public void delierExemplaire(Exemplaire ex) {
                     for(Emprunt e : empruntsEnCours){
-                        if (e.getExemplaire().getNumExemplaire() == numExemplaire) {
+                        if (e.getExemplaire().getNumExemplaire() == ex.getNumExemplaire()) {
                             empruntsEnCours.remove(e);
                         }
                     }
