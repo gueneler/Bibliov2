@@ -323,7 +323,7 @@ public class Bibliotheque implements Serializable
             dateActuelle.setTime(new Date());
             for (Emprunt e : _historiqueEmprunts) {
                 GregorianCalendar dateRetourPrevueProvisoire = e.getDateRetourPrevue();
-                dateRetourPrevueProvisoire.add(GregorianCalendar.DAY_OF_MONTH, 8);
+                dateRetourPrevueProvisoire.add(GregorianCalendar.DAY_OF_MONTH, 15);
                 if (e.getDateRetour() == null && !(dateRetourPrevueProvisoire.before(dateActuelle))) {
                     e.afficheInfos();
                     compteur++;
