@@ -26,9 +26,9 @@ public class Emprunt implements Serializable  {
         dateRetour = null;
         dateRetourPrevue = dateEmprunt;
         dateRetourPrevue.add((GregorianCalendar.DAY_OF_MONTH), 8);
-        setOuvrage(o);
-        setLecteur(l);
-        setExemplaire(e);
+        this.setOuvrage(o);
+        this.setLecteur(l);
+        this.setExemplaire(e);
     }
     
    //méthodes publiques
