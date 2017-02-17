@@ -120,6 +120,14 @@ public class Lecteur implements Serializable
                 public String getPublic() {
                     
                 }
+                    
+                public void delierExemplaire(Exemplaire ex) {
+                    for(Emprunt e : empruntsEnCours){
+                        if (e.getExemplaire().getNumExemplaire() == ex.getNumExemplaire()) {
+                            empruntsEnCours.remove(e);
+                        }
+                    }
+                }
 		
 	
 	
