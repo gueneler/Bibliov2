@@ -85,7 +85,8 @@ public class Emprunt implements Serializable  {
         EntreesSorties.afficherMessage("Date de retour prévu : "+ EntreesSorties.ecrireDate(dateRetourPrevue));
         EntreesSorties.afficherMessage("Date de retour effectif : "+ EntreesSorties.ecrireDate(dateRetour));
     }
-       
+    
+    
    //méthodes privées
     
     private void setOuvrage(Ouvrage ouvrage) {
