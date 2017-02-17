@@ -220,7 +220,10 @@ public class Bibliotheque implements Serializable
             int numLecteur = EntreesSorties.lireEntier("Entrez le numéro de lecteur dont vous voulez vérifier les emprunts en cours : ");
             Lecteur l = unLecteur(numLecteur);
             if (l != null){
-                
+                l.afficheInfosEmprunts();
+            }
+            else{
+                EntreesSorties.afficherMessage("Ce numéro de lecteur n'est pas attribué.");
             }
         }
 	
