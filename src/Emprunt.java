@@ -17,7 +17,12 @@ public class Emprunt {
    //constructeur
     
     public Emprunt(Ouvrage o, Lecteur l, Exemplaire e){
-        
+        dateEmprunt = new GregorianCalendar();
+        dateRetour = new GregorianCalendar();
+        dateRetourPrevue = new GregorianCalendar();
+        setOuvrage(o);
+        setLecteur(l);
+        setExemplaire(e);
     }
     
    //méthodes publiques
@@ -56,33 +61,28 @@ public class Emprunt {
         return ouvrage;
     }
 
-    
-    public void setOuvrage(Ouvrage ouvrage) {
-        this.ouvrage = ouvrage;
-    }
-
-    
+        
     public Lecteur getLecteur() {
         return lecteur;
     }
-
-    
-    public void setLecteur(Lecteur lecteur) {
-        this.lecteur = lecteur;
-    }
-
-    
+   
+        
     public Exemplaire getExemplaire() {
         return exemplaire;
     }
-
+       
+   //méthodes privées
     
-    public void setExemplaire(Exemplaire exemplaire) {
-        this.exemplaire = exemplaire;
+    private void setOuvrage(Ouvrage ouvrage) {
+        this.ouvrage = ouvrage;
+    }
+
+    private void setLecteur(Lecteur lecteur) {
+        this.lecteur = lecteur;
     }
     
-   //méthodes privées
-
-    
+    private void setExemplaire(Exemplaire exemplaire) {
+        this.exemplaire = exemplaire;
+    }
 
 }
