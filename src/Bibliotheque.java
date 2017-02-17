@@ -332,5 +332,9 @@ public class Bibliotheque implements Serializable
             return compteur;
         }
         
+        public void ajouterEmpruntDico(Emprunt emp){
+            _historiqueEmprunts.add(emp);
+        }
+        
         
 }
