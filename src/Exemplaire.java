@@ -87,8 +87,24 @@ public class Exemplaire implements Serializable {
         Emprunt emp;
         emp = new Emprunt(o,l,e);
         this.setEtatEmprunté();
+        ajouterEmpruntDico(emp);
     }
     
+    public String verifEtat(){
+        String etat;
+        
+        if(this.emprunté == true){
+            etat = "exemplaire emprunté";
+        }
+        else if(this.empruntable == false){
+            etat = "exemplaire non empruntable";
+        }
+        else {
+            etat = "disponible";
+        }
+        
+        return etat;
+    }
     
         
 }
