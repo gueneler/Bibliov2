@@ -266,7 +266,7 @@ public class Bibliotheque implements Serializable
                         Lecteur l = emp.getLecteur();
                         String etat = e.verifEtat();
                         if (etat == "exemplaire emprunté"){
-                            l.delierExemplaire(e);
+                            l.delierEmprunt(e);
                             GregorianCalendar dateActuelle;
                             dateActuelle = new GregorianCalendar();
                             dateActuelle.setTime(new Date());
