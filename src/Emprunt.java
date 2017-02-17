@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 
 //Classe de gestion d'Emprunt
 
-public class Emprunt {
+public class Emprunt implements Serializable  {
     
    //attributs
     
