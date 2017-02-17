@@ -23,7 +23,7 @@ public class Emprunt implements Serializable  {
         dateRetour = new GregorianCalendar();
         dateRetourPrevue = new GregorianCalendar();
         dateEmprunt.setTime(new Date());
-        dateRetour = null;
+        setDateRetour(null);
         dateRetourPrevue = dateEmprunt;
         dateRetourPrevue.add((GregorianCalendar.DAY_OF_MONTH), 8);
         this.setOuvrage(o);
@@ -99,6 +99,7 @@ public class Emprunt implements Serializable  {
     private void setExemplaire(Exemplaire exemplaire) {
         this.exemplaire = exemplaire;
     }
+    
     
     
 }
