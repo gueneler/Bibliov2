@@ -141,8 +141,18 @@ public class Lecteur implements Serializable
                     }
                 }
                 
+                public void lierEmprunt(Emprunt emp) {
+                    this.empruntsEnCours
+                }
+                
                 public int verifNombreEmprunts(){
                     return empruntsEnCours.size();
+                }
+                
+                public void ajouterExemplaire(Ouvrage o, Lecteur l, Exemplaire e){
+                    e.ajouterEmprunt(o, l, e);
+                    
+                    
                 }
        
 		
