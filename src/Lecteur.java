@@ -116,6 +116,14 @@ public class Lecteur implements Serializable
                         EntreesSorties.afficherMessage("");
                     }
                 }
+                
+                public void delierExemplaire(int numExemplaire) {
+                    for(Emprunt e : empruntsEnCours){
+                        if (e.getExemplaire().getNumExemplaire() == numExemplaire) {
+                            empruntsEnCours.remove(e);
+                        }
+                    }
+                }
 		
 	
 	
