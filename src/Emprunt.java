@@ -23,7 +23,7 @@ public class Emprunt implements Serializable  {
         dateRetour = new GregorianCalendar();
         dateRetourPrevue = new GregorianCalendar();
         dateEmprunt.setTime(new Date());
-        setDateRetour(null);
+        this.setDateRetour(null);
         dateRetourPrevue = dateEmprunt;
         dateRetourPrevue.add((GregorianCalendar.DAY_OF_MONTH), 8);
         this.setOuvrage(o);
