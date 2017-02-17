@@ -58,6 +58,7 @@ public void menuLecteur() {
 		EntreesSorties.afficherMessage("| Saisissez un numero correspondant :                    |");
 		EntreesSorties.afficherMessage("| Nouveau Lecteur : 1                                    |");
 		EntreesSorties.afficherMessage("| Consulter Lecteur : 2                                  |");
+                EntreesSorties.afficherMessage("| Consulter emprunts en cours d'un lecteur : 3           |");
 		EntreesSorties.afficherMessage("| Retour Menu Principal : 0                              |");
 		EntreesSorties.afficherMessage(" ========================================================");
 		menuLect = EntreesSorties.lireEntier();
@@ -69,6 +70,11 @@ public void menuLecteur() {
 				}
 				case 2 : {
 					_bibliotheque.consulterLecteur();
+					break;
+				}
+                                
+                                case 3 : {
+					_bibliotheque.consulterEmpruntsLecteur();
 					break;
 				}
 				default : {

@@ -76,6 +76,15 @@ public class Emprunt implements Serializable  {
     public Exemplaire getExemplaire() {
         return exemplaire;
     }
+    
+    public void afficheInfos(){
+        EntreesSorties.afficherMessage("Titre de l'ouvrage : "+getOuvrage().getTitreOuvrage());
+        EntreesSorties.afficherMessage("Numéro ISBN : "+getOuvrage().getNumISBN());
+        EntreesSorties.afficherMessage("Numéro de l'exemplaire : "+getExemplaire().getNumExemplaire());
+        EntreesSorties.afficherMessage("Date d'emprunt : "+ EntreesSorties.ecrireDate(dateEmprunt));
+        EntreesSorties.afficherMessage("Date de retour prévu : "+ EntreesSorties.ecrireDate(dateRetourPrevue));
+        EntreesSorties.afficherMessage("Date de retour effectif : "+ EntreesSorties.ecrireDate(dateRetour));
+    }
        
    //méthodes privées
     
@@ -90,5 +99,6 @@ public class Emprunt implements Serializable  {
     private void setExemplaire(Exemplaire exemplaire) {
         this.exemplaire = exemplaire;
     }
-
+    
+    
 }

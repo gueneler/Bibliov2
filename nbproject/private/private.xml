@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/users/info/etu-as/gueneler/Public/Bibliov2/src/MenuBiblio.java</file>
+            <file>file:/users/info/etu-as/gueneler/Public/Bibliov2/src/Emprunt.java</file>
+            <file>file:/users/info/etu-as/gueneler/Public/Bibliov2/src/Bibliotheque.java</file>
+            <file>file:/users/info/etu-as/gueneler/Public/Bibliov2/src/Lecteur.java</file>
+            <file>file:/users/info/etu-as/gueneler/Public/Bibliov2/src/EntreesSorties.java</file>
+            <file>file:/users/info/etu-as/gueneler/Public/Bibliov2/src/Ouvrage.java</file>
+            <file>file:/users/info/etu-as/gueneler/Public/Bibliov2/src/Exemplaire.java</file>
+        </group>
     </open-files>
 </project-private>
