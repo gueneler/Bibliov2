@@ -83,11 +83,11 @@ public class Exemplaire implements Serializable {
         this.emprunté = false;
     }
     
-    public void ajouterEmprunt(Ouvrage o, Lecteur l, Exemplaire e){
+    public Emprunt ajouterEmprunt(Ouvrage o, Lecteur l, Exemplaire e){
         Emprunt emp;
         emp = new Emprunt(o,l,e);
         this.setEtatEmprunté();
-        ajouterEmpruntDico(emp);
+        return emp;
     }
     
     public String verifEtat(){
