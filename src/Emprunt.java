@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 
@@ -20,6 +21,10 @@ public class Emprunt {
         dateEmprunt = new GregorianCalendar();
         dateRetour = new GregorianCalendar();
         dateRetourPrevue = new GregorianCalendar();
+        dateEmprunt.setTime(new Date());
+        dateRetour = null;
+        dateRetourPrevue = dateEmprunt;
+        dateRetourPrevue.add((GregorianCalendar.DAY_OF_MONTH), 8);
         setOuvrage(o);
         setLecteur(l);
         setExemplaire(e);
