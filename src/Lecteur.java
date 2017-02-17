@@ -133,7 +133,7 @@ public class Lecteur implements Serializable
                     return blic;
                 }
                     
-                public void delierExemplaire(Exemplaire ex) {
+                public void delierEmprunt(Exemplaire ex) {
                     for(Emprunt e : empruntsEnCours){
                         if (e.getExemplaire().getNumExemplaire() == ex.getNumExemplaire()) {
                             empruntsEnCours.remove(e);
@@ -149,7 +149,9 @@ public class Lecteur implements Serializable
                     return empruntsEnCours.size();
                 }
                 
-                
+                public void setEtatSature(){
+                    this.sature = true;
+                }
        
 		
 	
