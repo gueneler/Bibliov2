@@ -1,11 +1,12 @@
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.Map;
 //test
-public class Ouvrage {
+public class Ouvrage implements Serializable  {
 
     private String numISBN;
     private String titreOuvrage;
@@ -124,10 +125,13 @@ public class Ouvrage {
       for (Map.Entry<Integer, Exemplaire> ex : set) {
         GregorianCalendar date = ex.getValue().getDateReception();
         System.out.print("Numéro exemplaire : " + ex.getKey() +"\nDate de réception : "+ date.get(GregorianCalendar.DAY_OF_MONTH) + "/" +date.get(GregorianCalendar.MONTH)+1 + "/" +date.get(GregorianCalendar.YEAR) +"\nEmpruntable : " + ex.getValue().isEmpruntable()+"\n\n");
-    }
+      }
                    
     }
     
+    public boolean verifPublic(String publicAVerifier){
+        return publicAVerifier.equalsIgnoreCase(this.publicCible);
+    }
     
     
 }

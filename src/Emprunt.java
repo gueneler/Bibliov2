@@ -1,9 +1,11 @@
+import java.io.Serializable;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 
 //Classe de gestion d'Emprunt
 
-public class Emprunt {
+public class Emprunt implements Serializable  {
     
    //attributs
     
@@ -20,9 +22,13 @@ public class Emprunt {
         dateEmprunt = new GregorianCalendar();
         dateRetour = new GregorianCalendar();
         dateRetourPrevue = new GregorianCalendar();
-        setOuvrage(o);
-        setLecteur(l);
-        setExemplaire(e);
+        dateEmprunt.setTime(new Date());
+        dateRetour = null;
+        dateRetourPrevue = dateEmprunt;
+        dateRetourPrevue.add((GregorianCalendar.DAY_OF_MONTH), 8);
+        this.setOuvrage(o);
+        this.setLecteur(l);
+        this.setExemplaire(e);
     }
     
    //méthodes publiques
