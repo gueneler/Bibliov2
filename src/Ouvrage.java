@@ -1,11 +1,12 @@
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.Map;
 //test
-public class Ouvrage {
+public class Ouvrage implements Serializable  {
 
     private String numISBN;
     private String titreOuvrage;
