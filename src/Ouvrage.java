@@ -51,7 +51,7 @@ public class Ouvrage implements Serializable  {
         return nomEditeur;
     }
 
-    private Exemplaire getExemplaire(Integer numExemplaire){
+    public Exemplaire getExemplaire(Integer numExemplaire){
         return _dicoExemplaire.get(numExemplaire);
     }
 
