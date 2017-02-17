@@ -316,7 +316,7 @@ public class Bibliotheque implements Serializable
             return numProp;
         }
 
-        private afficherRetardataires() {
+        private int afficherRetardataires() {
             int compteur;
             GregorianCalendar dateActuelle;
             dateActuelle.setTime(new Date());
