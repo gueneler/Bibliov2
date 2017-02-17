@@ -239,6 +239,21 @@ public class Bibliotheque implements Serializable
             System.out.println("Fin d'affichage des "+compteur+" emprunts en retard.");
         }
         
+        public void emprunterExemplaire(){
+            String numISBN = EntreesSorties.lireChaine("Entrez un numéro ISBN : ");
+            int numExemplaire = EntreesSorties.lireEntier("Entrez le numéro d'exemplaire à emprunter : ");
+            int numLecteur = EntreesSorties.lireEntier("Entrez le numéro de lecteur : ");
+            Ouvrage o = getOuvrage(numISBN);
+            Lecteur l = unLecteur(numLecteur);
+            if (o != null){
+                Exemplaire e = o.getExemplaire(numExemplaire);
+                if (e != null){
+                    
+                }
+            }
+            
+        }
+        
         public void rendreExemplaire(){
             String numISBN = EntreesSorties.lireChaine("Entrez un numéro ISBN : ");
             int numExemplaire = EntreesSorties.lireEntier("Entrez le numéro d'exemplaire rendu : ");
