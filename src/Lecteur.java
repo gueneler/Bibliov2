@@ -22,6 +22,7 @@ public class Lecteur implements Serializable
 		private String numTelLecteur;
 		private GregorianCalendar dateNaiss;
                 private ArrayList<Emprunt> empruntsEnCours;
+                private Boolean sature;
 			
 	
 	
@@ -38,6 +39,7 @@ public class Lecteur implements Serializable
 			this.setAdresse(adresse);
 			this.setTel(tel);
                         empruntsEnCours = new ArrayList<>();
+                        sature = false;
 		}
 		
 // -----------------------------------------------
@@ -108,8 +110,10 @@ public class Lecteur implements Serializable
 		}
                 
                 public void afficheInfosEmprunts(){
+                    EntreesSorties.afficherMessage(" ========================================================");
                     for(Emprunt e : empruntsEnCours){
                         e.afficheInfos();
+                        EntreesSorties.afficherMessage("");
                     }
                 }
 		
