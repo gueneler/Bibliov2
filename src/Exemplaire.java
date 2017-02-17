@@ -11,6 +11,7 @@ public class Exemplaire implements Serializable {
     private int numExemplaire;
     private GregorianCalendar dateReception;
     private boolean empruntable;
+    private boolean emprunté;
     private String numISBN;
     
     //constructeur
@@ -19,7 +20,8 @@ public class Exemplaire implements Serializable {
         this.setNumISBN(numISBN);
         this.setNumExemplaire(numExemplaire);
         this.setDateReception(dateReception);
-        this.setEmpruntable(empruntable);        
+        this.setEmpruntable(empruntable);
+        this.emprunté = false;
     }
     
     //methodes
@@ -71,6 +73,14 @@ public class Exemplaire implements Serializable {
      */
     private void setNumISBN(String numISBN) {
         this.numISBN = numISBN;
+    }
+    
+    public void setEtatEmprunté(){
+        this.emprunté = true;
+    }
+    
+    public void setEtatDispo(){
+        this.emprunté = false;
     }
         
 }

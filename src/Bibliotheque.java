@@ -1,5 +1,8 @@
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -17,6 +20,7 @@ public class Bibliotheque implements Serializable
 	
 		private HashMap<Integer, Lecteur> _dicoLecteur;
 		private HashMap<String, Ouvrage> _dicoOuvrage;
+		private ArrayList<Emprunt> _historiqueEmprunts;
                 		
 		/*
 		 * Le dictionnaire de lecteur permet à bibliotheque de 
@@ -31,6 +35,7 @@ public class Bibliotheque implements Serializable
 		public Bibliotheque() {
 			this.setLecteurs(new HashMap<Integer, Lecteur>());
 			this.setOuvrages(new HashMap<String, Ouvrage>());
+			this.setEmprunts(new ArrayList<Emprunt>());
 		}
 	
 // -----------------------------------------------
@@ -226,6 +231,13 @@ public class Bibliotheque implements Serializable
                 EntreesSorties.afficherMessage("Ce numéro de lecteur n'est pas attribué.");
             }
         }
+
+
+
+        public void relancerLecteur() {
+            int compteur = afficherRetardataires();
+            System.out.println("Fin d'affichage des "+compteur+" emprunts en retard.");
+        }
 	
 // -----------------------------------------------
 	// Private
@@ -242,6 +254,8 @@ public class Bibliotheque implements Serializable
         private void setOuvrages(HashMap<String, Ouvrage> dicoOuvrage) {
 		_dicoOuvrage = dicoOuvrage;
 	}
+
+	private void setEmprunts(ArrayList<Emprunt> histoEmprunts) { _historiqueEmprunts = histoEmprunts; }
         
 	
 	
@@ -300,6 +314,22 @@ public class Bibliotheque implements Serializable
             }while (L != null);
             
             return numProp;
+        }
+
+        private int afficherRetardataires() {
+            int compteur = 0;
+            GregorianCalendar dateActuelle;
+            dateActuelle = new GregorianCalendar();
+            dateActuelle.setTime(new Date());
+            for (Emprunt e : _historiqueEmprunts) {
+                GregorianCalendar dateRetourPrevueProvisoire = e.getDateRetourPrevue();
+                dateRetourPrevueProvisoire.add(GregorianCalendar.DAY_OF_MONTH, 8);
+                if (e.getDateRetour() == null && !(dateRetourPrevueProvisoire.before(dateActuelle))) {
+                    e.afficheInfos();
+                    compteur++;
+                }
+            }
+            return compteur;
         }
         
         
