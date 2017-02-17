@@ -248,7 +248,15 @@ public class Bibliotheque implements Serializable
             if (o != null){
                 Exemplaire e = o.getExemplaire(numExemplaire);
                 if (e != null){
-                    
+                    String blic = l.getPublic();
+                    boolean possible = o.verifPublic(blic);
+                    if(possible){
+                        String etat = e.verifEtat();
+                        int nbEmp = l.verifNombreEmprunts();
+                        if(etat == "disponible" && nbEmp < 5){
+                            
+                        }
+                    }
                 }
             }
             
