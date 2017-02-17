@@ -249,12 +249,14 @@ public class Bibliotheque implements Serializable
                     Emprunt emp = getEmprunt(numISBN, numExemplaire);
                     if (emp != null){
                         Lecteur l = emp.getLecteur();
-                        String etat = l.verifEtat();
+                        String etat = e.verifEtat();
                         if (etat == "exemplaire emprunté"){
                             l.delierExemplaire(e);
-                            emp.ajoutDateRetour();
+                            GregorianCalendar dateActuelle;
+                            dateActuelle = new GregorianCalendar();
+                            dateActuelle.setTime(new Date());
+                            emp.setDateRetour(dateActuelle);
                             e.setEtatDispo();
-                            
                         }
                         else{
                             EntreesSorties.afficherMessage("Aucun emprunt n'est lié à cet exemplaire.");
