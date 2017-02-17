@@ -223,6 +223,14 @@ public class Bibliotheque implements Serializable
                 
             }
         }
+
+
+
+        public void relancerLecteur() {
+            int compteur;
+            compteur = afficherRetardataires();
+            System.out.println("Fin d'affichage des "+compteur+" emprunts en retard.");
+        }
 	
 // -----------------------------------------------
 	// Private
