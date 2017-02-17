@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -20,6 +21,7 @@ public class Lecteur implements Serializable
 		private String adresseLecteur;
 		private String numTelLecteur;
 		private GregorianCalendar dateNaiss;
+                private ArrayList<Emprunt> empruntsEnCours;
 			
 	
 	
@@ -35,6 +37,7 @@ public class Lecteur implements Serializable
 			this.setDateNaiss(dateNaiss);
 			this.setAdresse(adresse);
 			this.setTel(tel);
+                        empruntsEnCours = new ArrayList<>();
 		}
 		
 // -----------------------------------------------
@@ -103,6 +106,12 @@ public class Lecteur implements Serializable
 			}
 			return age;
 		}
+                
+                public void afficheInfosEmprunts(){
+                    for(Emprunt e : empruntsEnCours){
+                        e.afficheInfos();
+                    }
+                }
 		
 	
 	
