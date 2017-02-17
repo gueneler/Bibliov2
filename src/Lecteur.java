@@ -116,6 +116,10 @@ public class Lecteur implements Serializable
                         EntreesSorties.afficherMessage("");
                     }
                 }
+                
+                public String getPublic() {
+                    
+                }
 		
 	
 	
@@ -150,6 +154,8 @@ public class Lecteur implements Serializable
 		private void setTel(String tel) {
                         this.numTelLecteur = tel;
 		}
+                
+                
 		
 		
 }
