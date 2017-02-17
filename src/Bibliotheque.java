@@ -253,11 +253,38 @@ public class Bibliotheque implements Serializable
                     if(possible){
                         String etat = e.verifEtat();
                         int nbEmp = l.verifNombreEmprunts();
-                        if(etat == "disponible" && nbEmp < 5){
-                            
+                        if(etat == "disponible"){
+                            if(nbEmp < 5) {
+                            Emprunt emp = new Emprunt(o, l, e);
+                            e.setEtatEmprunté();
+                            l.lierEmprunt(emp);
+                            if(l.verifNombreEmprunts() == 5){
+                                l.setEtatSature();
+                                EntreesSorties.afficherMessage("Vous avez emprunté cinq ouvrages.");
+                            }
+                            ajouterEmpruntDico(emp);
+                            }
+                            else {
+                               EntreesSorties.afficherMessage("Vous avez déjà emprunté cinq ouvrages."); 
+                            }
+                        }
+                        else if (etat == "exemplaire emprunté") {
+                            EntreesSorties.afficherMessage("Ce livre n'est pas disponible.");
+                        }
+                        else {
+                            EntreesSorties.afficherMessage("Ce livre n'est pas empruntable.");
                         }
                     }
+                    else {
+                        EntreesSorties.afficherMessage("Ce livre n'est pas adapté à votre âge.");
+                    }
                 }
+                else {
+                    EntreesSorties.afficherMessage("Cet exemplaire n'est pas répertorié.");
+                }
+            }
+            else {
+                EntreesSorties.afficherMessage("L'ouvrage n'est pas répertorié.");
             }
             
         }
