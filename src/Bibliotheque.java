@@ -95,6 +95,9 @@ public class Bibliotheque implements Serializable
 			
 			L = new Lecteur(nom, prenom, numLecteur, dateNaiss, adresse, tel);
 			lierLecteur(L, numLecteur);
+                        
+                        EntreesSorties.afficherMessage("Voci les informations du lecteur créé : ");
+                        L.afficherLecteur();
 		}
 		else {
 			EntreesSorties.afficherMessage("Ce numero de lecteur existe deja.");
@@ -124,6 +127,10 @@ public class Bibliotheque implements Serializable
 
 			O = new Ouvrage(numISBN,titreOuvrage,nomEditeur,nomAuteur,dateParution,publicCible);
 			lierOuvrage(O, numISBN);
+                                                
+                       EntreesSorties.afficherMessage("Voici les ifnormations du nouvel ouvrage : ");
+                       O.afficheInfosOuvrage();
+                        
 		}
 		else {
 			EntreesSorties.afficherMessage("Cet ouvrage existe déjà.");
@@ -167,6 +174,10 @@ public class Bibliotheque implements Serializable
 
 			E = new Exemplaire(numISBN, numExemplaire, dateReception, empruntable);
 			O.lierExemplaire(E);
+                        
+                        EntreesSorties.afficherMessage("Voci les informations du nouvel exemplaire : ");
+                        E.afficheInfosExemplaire();
+                        
 		}
 		else {
 			EntreesSorties.afficherMessage("Cet ouvrage n'existe pas, il faut le créer avant de pouvoir ajouter un exemplaire.");
