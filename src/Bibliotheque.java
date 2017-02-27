@@ -96,6 +96,7 @@ public class Bibliotheque implements Serializable
 			L = new Lecteur(nom, prenom, numLecteur, dateNaiss, adresse, tel);
 			lierLecteur(L, numLecteur);
                         
+                        EntreesSorties.afficherMessage("========================================================");
                         EntreesSorties.afficherMessage("Voci les informations du lecteur créé : ");
                         L.afficherLecteur();
 		}
@@ -127,8 +128,9 @@ public class Bibliotheque implements Serializable
 
 			O = new Ouvrage(numISBN,titreOuvrage,nomEditeur,nomAuteur,dateParution,publicCible);
 			lierOuvrage(O, numISBN);
-                                                
-                       EntreesSorties.afficherMessage("Voici les ifnormations du nouvel ouvrage : ");
+                       
+                       EntreesSorties.afficherMessage("========================================================");
+                       EntreesSorties.afficherMessage("Voici les informations du nouvel ouvrage : ");
                        O.afficheInfosOuvrage();
                         
 		}
@@ -175,6 +177,7 @@ public class Bibliotheque implements Serializable
 			E = new Exemplaire(numISBN, numExemplaire, dateReception, empruntable);
 			O.lierExemplaire(E);
                         
+                        EntreesSorties.afficherMessage("========================================================");
                         EntreesSorties.afficherMessage("Voci les informations du nouvel exemplaire : ");
                         E.afficheInfosExemplaire();
                         
@@ -340,6 +343,7 @@ public class Bibliotheque implements Serializable
                             dateActuelle.setTime(new Date());
                             emp.setDateRetour(dateActuelle);
                             e.setEtatDispo();
+                            EntreesSorties.afficherMessage("========================================================");
                             EntreesSorties.afficherMessage("Voici les informations de l'exemplaire rendu : ");
                             e.afficheInfosExemplaire();
                         }
