@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 // Classe de gestion de Lecteur
+// test
 
 public class Lecteur implements Serializable 
 {
