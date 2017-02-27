@@ -284,20 +284,17 @@ public class Bibliotheque implements Serializable
                             else {
                                EntreesSorties.afficherMessage("Vous avez déjà emprunté cinq ouvrages."); 
                             }
+                            EntreesSorties.afficherMessage("========================================================");
                             EntreesSorties.afficherMessage("Voici les informations du nouvel emprunt : ");
                             EntreesSorties.afficherMessage("========================================================");
                             EntreesSorties.afficherMessage("Ouvrage emprunté :");
-                            EntreesSorties.afficherMessage("========================================================");
                             o.afficheInfosOuvrage();
                             EntreesSorties.afficherMessage("========================================================");
                             EntreesSorties.afficherMessage("Exemplaire emprunté :");
-                            EntreesSorties.afficherMessage("========================================================");
                             e.afficheInfosExemplaire();
                             EntreesSorties.afficherMessage("========================================================");
                             EntreesSorties.afficherMessage("Lecteur emprunteur :");
-                            EntreesSorties.afficherMessage("========================================================");
                             l.afficherLecteur();
-                            EntreesSorties.afficherMessage("========================================================");
 
 
                         }
