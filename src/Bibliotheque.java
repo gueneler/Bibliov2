@@ -340,6 +340,8 @@ public class Bibliotheque implements Serializable
                             dateActuelle.setTime(new Date());
                             emp.setDateRetour(dateActuelle);
                             e.setEtatDispo();
+                            EntreesSorties.afficherMessage("Voici les informations de l'exemplaire rendu : ");
+                            e.afficheInfosExemplaire();
                         }
                         else{
                             EntreesSorties.afficherMessage("Aucun emprunt n'est lié à cet exemplaire.");
