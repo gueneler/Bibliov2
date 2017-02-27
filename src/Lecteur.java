@@ -133,14 +133,10 @@ public class Lecteur implements Serializable
                     }
                     return blic;
                 }
-                    
-                public void delierEmprunt(Exemplaire ex) {
-                    for(Emprunt e : empruntsEnCours){
-                        if (e.getExemplaire().getNumExemplaire() == ex.getNumExemplaire()) {
-                            empruntsEnCours.remove(e);
-                        }
-                    }
-                }
+
+                public void delierEmprunt(Emprunt emp) {
+                	empruntsEnCours.remove(emp);
+				}
                 
                 public void lierEmprunt(Emprunt emp) {
                     this.empruntsEnCours.add(emp);

@@ -304,7 +304,7 @@ public class Bibliotheque implements Serializable
                         Lecteur l = emp.getLecteur();
                         String etat = e.verifEtat();
                         if (etat == "exemplaire emprunté"){
-                            l.delierEmprunt(e);
+                            l.delierEmprunt(emp);
                             GregorianCalendar dateActuelle;
                             dateActuelle = new GregorianCalendar();
                             dateActuelle.setTime(new Date());
@@ -320,7 +320,7 @@ public class Bibliotheque implements Serializable
                     }
                 }
                 else {
-                    EntreesSorties.afficherMessage("Ce unméro ne correspond à aucun exemplaire de cet ouvrage.");
+                    EntreesSorties.afficherMessage("Ce numéro ne correspond à aucun exemplaire de cet ouvrage.");
                 }
             }
             else {
@@ -428,7 +428,7 @@ public class Bibliotheque implements Serializable
         private Emprunt getEmprunt(String numISBN, int numExemplaire){
             Emprunt emp = null;
             for (Emprunt e : _historiqueEmprunts){
-                if (e.getOuvrage().getNumISBN() == numISBN && e.getExemplaire().getNumExemplaire() == numExemplaire && e.getDateRetour() == null){
+                if (e.getOuvrage().getNumISBN().equalsIgnoreCase(numISBN) && e.getExemplaire().getNumExemplaire() == numExemplaire && e.getDateRetour() == null){
                     emp = e;
                 }
             }
