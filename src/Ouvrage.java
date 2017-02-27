@@ -130,7 +130,13 @@ public class Ouvrage implements Serializable  {
     }
     
     public boolean verifPublic(String publicAVerifier){
-        return publicAVerifier.equalsIgnoreCase(this.publicCible);
+        if (publicAVerifier.equalsIgnoreCase("enfant") && (this.publicCible.equalsIgnoreCase("ado") || this.publicCible.equalsIgnoreCase("adulte"))){
+            return false;
+        }
+        if (publicAVerifier.equalsIgnoreCase("ado") && this.publicCible.equalsIgnoreCase("adulte")){
+            return false;
+        }
+        return true;
     }
     
     
