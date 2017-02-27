@@ -19,6 +19,7 @@ public void menuPrincipal() {
 		EntreesSorties.afficherMessage("| Menu Lecteur : 1                                       |");
                 EntreesSorties.afficherMessage("| Menu Ouvrage : 2                                       |");
                 EntreesSorties.afficherMessage("| Menu Exemplaire : 3                                    |");
+                EntreesSorties.afficherMessage("| Afficher retardataires : 4                             |");
 		EntreesSorties.afficherMessage("| Quitter : 0                                            |");
 		EntreesSorties.afficherMessage(" ========================================================");
 		menu = EntreesSorties.lireEntier();
@@ -36,6 +37,11 @@ public void menuPrincipal() {
                                 
                                 case 3 : {
                                         this.menuExemplaire();
+                                        break;
+                                }
+
+                                case 4 : {
+                                        _bibliotheque.relancerLecteur();
                                         break;
                                 }
 				
