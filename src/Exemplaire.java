@@ -103,8 +103,7 @@ public class Exemplaire implements Serializable {
     public void afficheInfosExemplaire(){
         EntreesSorties.afficherMessage("Numéro ISBN : "+getNumISBN());
         EntreesSorties.afficherMessage("Numéro d'exemplaire : "+getNumExemplaire());
-        EntreesSorties.afficherMessage("Date de réception : ");
-        EntreesSorties.ecrireDate(dateReception);
+        EntreesSorties.afficherMessage("Date de réception : "+EntreesSorties.ecrireDate(dateReception));
         EntreesSorties.afficherMessage("Empruntable : "+isEmpruntable());
     }    
 
