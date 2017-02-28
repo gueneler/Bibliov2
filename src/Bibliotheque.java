@@ -360,6 +360,24 @@ public class Bibliotheque implements Serializable
                 EntreesSorties.afficherMessage("Ce numéro d'ISBN n'est pas enregistré");
             }
         }
+        
+        public void histoLecteurs(){
+            int numLecteur;
+            Lecteur l; 
+            do{
+                numLecteur = EntreesSorties.lireEntier("Entrer le numéro de lecteur dont vous voulez l'historique : ");
+                l = unLecteur(numLecteur);
+            }while (l == null);
+            int compteur = 0;
+            for (Emprunt e: _historiqueEmprunts){
+                if (e.getLecteur() == l){
+                    compteur += 1;
+                    e.afficheInfos();
+                    EntreesSorties.afficherMessage("********************");
+                }
+            }
+            EntreesSorties.afficherMessage("Fin d'affichage des "+compteur+" emprunts de ce lecteur.\n");
+        }
 	
 // -----------------------------------------------
 	// Private

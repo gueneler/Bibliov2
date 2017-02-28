@@ -20,6 +20,7 @@ public void menuPrincipal() {
                 EntreesSorties.afficherMessage("| Menu Ouvrage : 2                                       |");
                 EntreesSorties.afficherMessage("| Menu Exemplaire : 3                                    |");
                 EntreesSorties.afficherMessage("| Afficher retardataires : 4                             |");
+                EntreesSorties.afficherMessage("| Stats : 5                                              |");
 		EntreesSorties.afficherMessage("| Quitter : 0                                            |");
 		EntreesSorties.afficherMessage(" ========================================================");
 		menu = EntreesSorties.lireEntier();
@@ -42,6 +43,11 @@ public void menuPrincipal() {
 
                                 case 4 : {
                                         _bibliotheque.relancerLecteur();
+                                        break;
+                                }
+                                
+                                case 5 : {
+                                        this.menuStats();
                                         break;
                                 }
 				
@@ -155,6 +161,28 @@ public void menuExemplaire() {
 			}
 	} while (menuEx != 0);	
 }
-	
+
+    public void menuStats() {
+            Integer menuStat;
+            do {
+                    EntreesSorties.afficherMessage(" ========================================================");
+                    EntreesSorties.afficherMessage("| Saisissez un numero correspondant :                    |");
+                    EntreesSorties.afficherMessage("| Historique d'emprunts d'un lecteur : 1                 |");
+                    EntreesSorties.afficherMessage("| Retour Menu Principal : 0                              |");
+                    EntreesSorties.afficherMessage(" ========================================================");
+                    menuStat = EntreesSorties.lireEntier();
+                    
+                    switch (menuStat){
+				case 1 : {
+					_bibliotheque.histoLecteurs();
+					break;
+				}
+				default : {
+					break;
+				}
+			}
+	} while (menuStat != 0);
+         
+    }
 }
 
