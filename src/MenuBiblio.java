@@ -168,6 +168,7 @@ public void menuExemplaire() {
                     EntreesSorties.afficherMessage(" ========================================================");
                     EntreesSorties.afficherMessage("| Saisissez un numero correspondant :                    |");
                     EntreesSorties.afficherMessage("| Historique d'emprunts d'un lecteur : 1                 |");
+                    EntreesSorties.afficherMessage("| Historique d'emprunts d'un ouvrage : 2                 |");
                     EntreesSorties.afficherMessage("| Retour Menu Principal : 0                              |");
                     EntreesSorties.afficherMessage(" ========================================================");
                     menuStat = EntreesSorties.lireEntier();
@@ -178,7 +179,7 @@ public void menuExemplaire() {
 					break;
 				}
                                 
-                                case 1 : {
+                                case 2 : {
 					_bibliotheque.histoOuvrage();
 					break;
 				}

@@ -378,6 +378,22 @@ public class Bibliotheque implements Serializable
             }
             EntreesSorties.afficherMessage("Fin d'affichage des "+compteur+" emprunts de ce lecteur.\n");
         }
+        
+        public void histoOuvrage(){
+            String numISBN;
+            Ouvrage o;
+            do{
+                numISBN = EntreesSorties.lireChaine("Entrer le numéro ISBN de l'ouvrage dont vous voulez l'historique : ");
+                o = getOuvrage(numISBN);
+            }while( o == null);
+            int compteur = 0;
+            for (Emprunt e: _historiqueEmprunts){
+                if (e.getOuvrage() == o){
+                    compteur +=1;
+                }
+            }
+            EntreesSorties.afficherMessage("Cet ouvrage a été emprunté "+compteur+" fois !");
+        }
 	
 // -----------------------------------------------
 	// Private
