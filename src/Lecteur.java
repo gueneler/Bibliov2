@@ -23,8 +23,8 @@ public class Lecteur implements Serializable
 		private String adresseLecteur;
 		private String numTelLecteur;
 		private GregorianCalendar dateNaiss;
-                private ArrayList<Emprunt> empruntsEnCours;
-                private Boolean sature;
+        private ArrayList<Emprunt> empruntsEnCours;
+        private Boolean sature;
 			
 	
 	
@@ -40,8 +40,8 @@ public class Lecteur implements Serializable
 			this.setDateNaiss(dateNaiss);
 			this.setAdresse(adresse);
 			this.setTel(tel);
-                        empruntsEnCours = new ArrayList<>();
-                        sature = false;
+            empruntsEnCours = new ArrayList<>();
+            sature = false;
 		}
 		
 // -----------------------------------------------
@@ -80,7 +80,7 @@ public class Lecteur implements Serializable
 		// -----------------------------------------------
 		
 		/*
-		 * La m�thode afficherLecteur affiche l'ensemble des informations relatives � un lecteur.
+		 * La méthode afficherLecteur affiche l'ensemble des informations relatives à un lecteur.
 		 */
 		public void afficherLecteur()
 		{
@@ -94,8 +94,8 @@ public class Lecteur implements Serializable
 		
 		
 		/*
-		 * la m�thode calculAge permet de d�terminer l'age des lecteurs grace a leur date de naissance
-		 * et la date actuelle. De cette fa�on, il n'y a pas de mise a jour a faire sur l'age des lecteurs.
+		 * la méthode calculAge permet de déterminer l'age des lecteurs grace a leur date de naissance
+		 * et la date actuelle. De cette façon, il n'y a pas de mise a jour a faire sur l'age des lecteurs.
 		 */
 		public Integer calculAge() {
 			Integer age;
@@ -110,7 +110,7 @@ public class Lecteur implements Serializable
 			}
 			return age;
 		}
-                
+                //Affiche les informations sur tous les emprunts en cours du Lecteur
                 public void afficheInfosEmprunts(){
                     EntreesSorties.afficherMessage(" ========================================================");
                     for(Emprunt e : empruntsEnCours){
@@ -118,7 +118,8 @@ public class Lecteur implements Serializable
                         EntreesSorties.afficherMessage("");
                     }
                 }
-                
+
+                //Renvoie la catégorie de public dans laquelle est le lecteur (Enfant, Ado, Adulte)
                 public String getPublic() {
                     int age = calculAge();
                     String blic;
@@ -134,18 +135,22 @@ public class Lecteur implements Serializable
                     return blic;
                 }
 
+                //Supprime l'emprunt du dictionnaire d'emprunts en cours de ce Lecteur
                 public void delierEmprunt(Emprunt emp) {
                 	empruntsEnCours.remove(emp);
 				}
-                
+
+				//Ajoute l'emprunt au dictionnaire d'emprunts en cours de ce Lecteur
                 public void lierEmprunt(Emprunt emp) {
                     this.empruntsEnCours.add(emp);
                 }
-                
+
+                //Renvoie le nombre d'emprunts en cours de ce Lecteur
                 public int verifNombreEmprunts(){
                     return empruntsEnCours.size();
                 }
-                
+
+                //Fait passer le lecteur dans l'état saturé (ne peut plus emprunter d'ouvrages)
                 public void setEtatSature(){
                     this.sature = true;
                 }

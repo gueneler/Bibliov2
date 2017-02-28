@@ -32,17 +32,7 @@ public class Emprunt implements Serializable  {
     }
     
    //méthodes publiques
-    
-    public GregorianCalendar getDateEmprunt() {
-        return dateEmprunt;
-    }
 
-    
-    public void setDateEmprunt(GregorianCalendar dateEmprunt) {
-        this.dateEmprunt = dateEmprunt;
-    }
-
-    
     public GregorianCalendar getDateRetour() {
         return dateRetour;
     }
@@ -55,11 +45,6 @@ public class Emprunt implements Serializable  {
     
     public GregorianCalendar getDateRetourPrevue() {
         return dateRetourPrevue;
-    }
-
-    
-    public void setDateRetourPrevue(GregorianCalendar dateRetourPrevue) {
-        this.dateRetourPrevue = dateRetourPrevue;
     }
 
     
@@ -76,7 +61,8 @@ public class Emprunt implements Serializable  {
     public Exemplaire getExemplaire() {
         return exemplaire;
     }
-    
+
+    //Affiche les infos relatives à un emprunt.
     public void afficheInfos(){
         EntreesSorties.afficherMessage("Titre de l'ouvrage : "+getOuvrage().getTitreOuvrage());
         EntreesSorties.afficherMessage("Numéro ISBN : "+getOuvrage().getNumISBN());
