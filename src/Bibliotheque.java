@@ -404,7 +404,7 @@ public class Bibliotheque implements Serializable
             for (Map.Entry<String, Ouvrage> o : set){
                 int compteur = 0;
                 for (Emprunt e: _historiqueEmprunts){
-                    if (e.getOuvrage() == o){
+                    if (e.getOuvrage() == o.getValue()){
                         compteur +=1;
                     }
                 }
