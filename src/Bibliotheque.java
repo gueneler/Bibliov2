@@ -367,12 +367,13 @@ public class Bibliotheque implements Serializable
                 numLecteur = EntreesSorties.lireEntier("Entrer le numéro de lecteur dont vous voulez l'historique : ");
                 l = unLecteur(numLecteur);
             }while (l == null);
+            EntreesSorties.afficherMessage("");
             int compteur = 0;
             for (Emprunt e: _historiqueEmprunts){
                 if (e.getLecteur() == l){
                     compteur += 1;
                     e.afficheInfos();
-                    EntreesSorties.afficherMessage("********************");
+                    EntreesSorties.afficherMessage("***************************");
                 }
             }
             EntreesSorties.afficherMessage("Fin d'affichage des "+compteur+" emprunts de ce lecteur.\n");
