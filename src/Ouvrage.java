@@ -129,7 +129,9 @@ public class Ouvrage implements Serializable  {
       EntreesSorties.afficherMessage("========================================================");
       for (Map.Entry<Integer, Exemplaire> ex : set) {
         GregorianCalendar date = ex.getValue().getDateReception();
-        System.out.print("Numéro exemplaire : " + ex.getKey() + "\nEtat : "+ ex.getValue().verifEtat() + "\nDate de réception : "+ date.get(GregorianCalendar.DAY_OF_MONTH) + "/" +date.get(GregorianCalendar.MONTH)+1 + "/" +date.get(GregorianCalendar.YEAR) +"\n\n");
+        EntreesSorties.afficherMessage("Numéro exemplaire : " + ex.getKey());
+        EntreesSorties.afficherMessage("Etat : "+ ex.getValue().verifEtat());
+        EntreesSorties.afficherMessage("Date de réception : "+ date.get(GregorianCalendar.DAY_OF_MONTH) + "/" +date.get(GregorianCalendar.MONTH)+1 + "/" +date.get(GregorianCalendar.YEAR));
       }
                    
     }
