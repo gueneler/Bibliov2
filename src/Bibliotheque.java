@@ -392,7 +392,7 @@ public class Bibliotheque implements Serializable
                     compteur +=1;
                 }
             }
-            EntreesSorties.afficherMessage("Cet ouvrage a été emprunté "+compteur+" fois !");
+            EntreesSorties.afficherMessage("Cet ouvrage a été emprunté "+compteur+" fois !\n");
         }
 	
 // -----------------------------------------------
