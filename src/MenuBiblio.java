@@ -177,6 +177,12 @@ public void menuExemplaire() {
 					_bibliotheque.histoLecteurs();
 					break;
 				}
+                                
+                                case 1 : {
+					_bibliotheque.histoOuvrage();
+					break;
+				}
+                                
 				default : {
 					break;
 				}
