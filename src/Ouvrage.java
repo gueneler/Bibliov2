@@ -94,13 +94,13 @@ public class Ouvrage implements Serializable  {
     } 
 
     public void afficheInfosOuvrage() {
-        System.out.println("Numéro ISBN :"+getNumISBN());
-        System.out.println("Titre : "+getTitreOuvrage());
-        System.out.println("Nom de l'auteur : "+getNomAuteur());
-        System.out.println("Nom de l'éditeur : "+getNomEditeur());
-        System.out.println("Date de parution : "+dateParution.get(GregorianCalendar.DAY_OF_MONTH)+"/"+(dateParution.get(GregorianCalendar.MONTH)+1)+"/"+dateParution.get(GregorianCalendar.YEAR));
-        System.out.println("Public cible : "+getPublicCible());
-        System.out.println("Nombre d'exemplaires : "+_dicoExemplaire.size());
+        EntreesSorties.afficherMessage("Numéro ISBN :"+getNumISBN());
+        EntreesSorties.afficherMessage("Titre : "+getTitreOuvrage());
+        EntreesSorties.afficherMessage("Nom de l'auteur : "+getNomAuteur());
+        EntreesSorties.afficherMessage("Nom de l'éditeur : "+getNomEditeur());
+        EntreesSorties.afficherMessage("Date de parution : "+dateParution.get(GregorianCalendar.DAY_OF_MONTH)+"/"+(dateParution.get(GregorianCalendar.MONTH)+1)+"/"+dateParution.get(GregorianCalendar.YEAR));
+        EntreesSorties.afficherMessage("Public cible : "+getPublicCible());
+        EntreesSorties.afficherMessage("Nombre d'exemplaires : "+_dicoExemplaire.size());
     }
     
     /* propose le premier numéro d'exemplaire disponible */
