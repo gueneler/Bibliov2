@@ -373,7 +373,7 @@ public class Bibliotheque implements Serializable
                 if (e.getLecteur() == l){
                     compteur += 1;
                     e.afficheInfos();
-                    EntreesSorties.afficherMessage("***************************");
+                    EntreesSorties.afficherMessage("\n***************************\n");
                 }
             }
             EntreesSorties.afficherMessage("Fin d'affichage des "+compteur+" emprunts de ce lecteur.\n");
