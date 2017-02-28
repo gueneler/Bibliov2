@@ -277,13 +277,9 @@ public class Bibliotheque implements Serializable
                             l.lierEmprunt(emp);
                             if(l.verifNombreEmprunts() == 5){
                                 l.setEtatSature();
-                                EntreesSorties.afficherMessage("Vous avez emprunté cinq ouvrages.");
+                                EntreesSorties.afficherMessage("Le lecteur a emprunté cinq ouvrages. Le lecteur a maintenant le statut saturé.");
                             }
                             ajouterEmpruntDico(emp);
-                            }
-                            else {
-                               EntreesSorties.afficherMessage("Vous avez déjà emprunté cinq ouvrages."); 
-                            }
                             EntreesSorties.afficherMessage("========================================================");
                             EntreesSorties.afficherMessage("Voici les informations du nouvel emprunt : ");
                             EntreesSorties.afficherMessage("========================================================");
@@ -295,8 +291,11 @@ public class Bibliotheque implements Serializable
                             EntreesSorties.afficherMessage("========================================================");
                             EntreesSorties.afficherMessage("Lecteur emprunteur :");
                             l.afficherLecteur();
-
-
+                            }
+                            else {
+                               EntreesSorties.afficherMessage("Le lecteur a déjà emprunté cinq ouvrages. Le lecteur ne peut pas en emprunter plus." ); 
+                            }
+                            
                         }
                         else if (etat == "exemplaire emprunté") {
                             EntreesSorties.afficherMessage("Ce livre n'est pas disponible.");
