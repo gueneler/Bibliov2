@@ -5,9 +5,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.Map;
-//test
+
 public class Ouvrage implements Serializable  {
 
+    //attributs
+    
     private String numISBN;
     private String titreOuvrage;
     private String nomEditeur;
@@ -15,7 +17,9 @@ public class Ouvrage implements Serializable  {
     private GregorianCalendar dateParution;
     private String publicCible;
     private HashMap<Integer, Exemplaire> _dicoExemplaire;
-
+    
+    //constructeur
+    
     Ouvrage(String numISBN, String titreOuvrage, String nomEditeur, String nomAuteur, GregorianCalendar dateParution, String publicCible) {
         this.setNumISBN(numISBN);
         this.setTitreOuvrage(titreOuvrage);
@@ -24,8 +28,9 @@ public class Ouvrage implements Serializable  {
         this.setDateParution(dateParution);
         this.setPublicCible(publicCible);
         this.setExemplaires(new HashMap<Integer, Exemplaire>());
-
     }
+    
+    //méthodes
 
     private void setNumISBN(String numISBN) {
         this.numISBN = numISBN;
@@ -50,11 +55,7 @@ public class Ouvrage implements Serializable  {
     public String getNomEditeur() {
         return nomEditeur;
     }
-
-    public Exemplaire getExemplaire(Integer numExemplaire){
-        return _dicoExemplaire.get(numExemplaire);
-    }
-
+    
     private void setNomAuteur(String nomAuteur) {
         this.nomAuteur = nomAuteur;
     }
@@ -78,7 +79,7 @@ public class Ouvrage implements Serializable  {
     public String getPublicCible() {
         return publicCible;
     }
-
+   
     public HashMap<Integer, Exemplaire> getExemplaires(){
         return _dicoExemplaire;
     }
@@ -86,6 +87,11 @@ public class Ouvrage implements Serializable  {
     private void setExemplaires(HashMap<Integer, Exemplaire> dicoExemplaire) {
         _dicoExemplaire = dicoExemplaire;
     }
+            
+    /* permet de récupérer un exemplaire du dictionnaire d'exemplaires de cet ouvrage, identifié par son numéro d'exemplaire */
+    public Exemplaire getExemplaire(Integer numExemplaire){
+        return _dicoExemplaire.get(numExemplaire);
+    } 
 
     public void afficheInfosOuvrage() {
         System.out.println("Numéro ISBN :"+getNumISBN());
@@ -97,24 +103,23 @@ public class Ouvrage implements Serializable  {
         System.out.println("Nombre d'exemplaires : "+_dicoExemplaire.size());
     }
     
-         /*
-         * Propose le premier numéro d'exemplaire disponible
-         */
-        public int PropNumExemplaire(){
-            int numProp = 0;
-            Exemplaire E;
+    /* propose le premier numéro d'exemplaire disponible */
+    public int PropNumExemplaire(){
+        int numProp = 0;
+        Exemplaire E;
             do {
                 numProp ++;
                 E = getExemplaire(numProp);
-            }while (E != null);
-            
-            return numProp;
-        }
-        
-        public void lierExemplaire(Exemplaire E){
-            _dicoExemplaire.put(E.getNumExemplaire(),E);
-        }
+            }while (E != null);          
+        return numProp;
+    }
     
+    /* ajoute un exemplaire au dictionnaire d'exemplaires de cet ouvrage */
+    public void lierExemplaire(Exemplaire E){
+        _dicoExemplaire.put(E.getNumExemplaire(),E);
+    }
+    
+    /* affiche une liste de tous les exemplaires de cet ouvrage et leurs informations respectives */
     public void afficheExemplaires(){
        
       Set<Map.Entry<Integer, Exemplaire>> set = _dicoExemplaire.entrySet();
@@ -129,6 +134,7 @@ public class Ouvrage implements Serializable  {
                    
     }
     
+    /* permet de comparer la catégorie d'un lecteur au public cible de cet ouvrage */
     public boolean verifPublic(String publicAVerifier){
         if (publicAVerifier.equalsIgnoreCase("enfant") && (this.publicCible.equalsIgnoreCase("ado") || this.publicCible.equalsIgnoreCase("adulte"))){
             return false;

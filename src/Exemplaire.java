@@ -26,64 +26,49 @@ public class Exemplaire implements Serializable {
     
     //methodes
 
-    /**
-     * @return the numExemplaire
-     */
     public int getNumExemplaire() {
         return numExemplaire;
     }
 
-    /**
-     * @param numExemplaire the numExemplaire to set
-     */
     private void setNumExemplaire(int numExemplaire) {
         this.numExemplaire = numExemplaire;
     }
-
-    /**
-     * @return the dateReception
-     */
+    
     public GregorianCalendar getDateReception() {
         return dateReception;
     }
-
-    /**
-     * @param dateReception the dateReception to set
-     */
+    
     private void setDateReception(GregorianCalendar dateReception) {
         this.dateReception = dateReception;
     }
-
-    /**
-     * @return the empruntable
-     */
+    
     public boolean isEmpruntable() {
         return empruntable;
     }
-
-    /**
-     * @param empruntable the empruntable to set
-     */
+    
     private void setEmpruntable(boolean empruntable) {
         this.empruntable = empruntable;
     }
-
-    /**
-     * @param numISBN the numISBN to set
-     */
+    
+    public String getNumISBN() {
+        return numISBN;
+    }
+    
     private void setNumISBN(String numISBN) {
         this.numISBN = numISBN;
     }
     
+    /* permet de passer l'exemplaire à l'état emprunté*/
     public void setEtatEmprunté(){
         this.emprunté = true;
     }
     
+    /* permet de passer l'exemplaire à l'état disponible*/
     public void setEtatDispo(){
         this.emprunté = false;
     }
     
-    
+    /* vérifie l'état de l'exemplaire : emprunté, disponible, non empruntable*/
     public String verifEtat(){
         String etat;
         
@@ -108,10 +93,6 @@ public class Exemplaire implements Serializable {
         EntreesSorties.afficherMessage("Etat : "+verifEtat());
     }    
 
-    /**
-     * @return the numISBN
-     */
-    public String getNumISBN() {
-        return numISBN;
-    }
+
+   
 }
