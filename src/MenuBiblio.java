@@ -20,7 +20,7 @@ public void menuPrincipal() {
                 EntreesSorties.afficherMessage("| Menu Ouvrage : 2                                       |");
                 EntreesSorties.afficherMessage("| Menu Exemplaire : 3                                    |");
                 EntreesSorties.afficherMessage("| Afficher retardataires : 4                             |");
-                EntreesSorties.afficherMessage("| Statistiques : 5                                              |");
+                EntreesSorties.afficherMessage("| Statistiques : 5                                       |");
 		EntreesSorties.afficherMessage("| Quitter : 0                                            |");
 		EntreesSorties.afficherMessage(" ========================================================");
 		menu = EntreesSorties.lireEntier();

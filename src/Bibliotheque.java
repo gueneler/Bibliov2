@@ -410,6 +410,7 @@ public class Bibliotheque implements Serializable
                 }
                 if(compteur >= topActuel){
                     top = o.getValue();
+                    topActuel = compteur;
                 }    
                 
             }
