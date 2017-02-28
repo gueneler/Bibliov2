@@ -5,6 +5,8 @@ import java.util.GregorianCalendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 
 // Classe de gestion de la Bibliotheque
@@ -393,6 +395,26 @@ public class Bibliotheque implements Serializable
                 }
             }
             EntreesSorties.afficherMessage("Cet ouvrage a été emprunté "+compteur+" fois !\n");
+        }
+        
+        public void topOuvrage(){
+            Ouvrage top=null;
+            int topActuel = 0;
+            Set<Map.Entry<String, Ouvrage>> set = _dicoOuvrage.entrySet();
+            for (Map.Entry<String, Ouvrage> o : set){
+                int compteur = 0;
+                for (Emprunt e: _historiqueEmprunts){
+                    if (e.getOuvrage() == o){
+                        compteur +=1;
+                    }
+                }
+                if(compteur >= topActuel){
+                    top = o.getValue();
+                }    
+                
+            }
+            
+            EntreesSorties.afficherMessage("\nL'ouvrage le plus emprunté est \""+top.getTitreOuvrage()+"\", avec "+topActuel+" emprunts.\n");
         }
 	
 // -----------------------------------------------
