@@ -9,6 +9,7 @@ import java.util.Map;
 public class Ouvrage implements Serializable  {
 
     //attributs
+    
     private String numISBN;
     private String titreOuvrage;
     private String nomEditeur;
@@ -18,6 +19,7 @@ public class Ouvrage implements Serializable  {
     private HashMap<Integer, Exemplaire> _dicoExemplaire;
     
     //constructeur
+    
     Ouvrage(String numISBN, String titreOuvrage, String nomEditeur, String nomAuteur, GregorianCalendar dateParution, String publicCible) {
         this.setNumISBN(numISBN);
         this.setTitreOuvrage(titreOuvrage);
